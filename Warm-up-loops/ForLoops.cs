@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Warm_up_loops
 {
-    class ForLoop
+    public class ForLoop
     {
         /// <summary>
         /// Return lowest number in array
@@ -13,7 +13,19 @@ namespace Warm_up_loops
         /// <returns>Returns lowest number in array.  If array is empty, returns null</returns>
         public int? GetLowest(int[] arr)
         {
-           throw new NotImplementedException();
+            if (arr.Length == 0)
+            {
+                return null;
+            }
+            int x = int.MaxValue;
+            for(int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i]< x)
+                {
+                    x = arr[i];
+                }
+            }
+            return x;
 
         }
 
@@ -24,8 +36,21 @@ namespace Warm_up_loops
         /// <returns>Returns highest number in array.  If array is empty, returns null</returns>
         public int? GetHighest(int[] arr)
         {
-            throw new NotImplementedException();
+            if (arr.Length==0)
+            {
+                return null;
+            }
+            int x = int.MinValue;
+            for (int i = 0;i < arr.Length; i++)
+            {
+                
+                if (arr[i]> x)
+                {
+                    x  =  arr[i];
 
+                }
+            }
+                    return x;
         }
 
         /// <summary>
@@ -35,7 +60,33 @@ namespace Warm_up_loops
         /// <returns>Returns highest number in array.  If there are no numbers provided, returns null</returns>
         public int? GetHighest(int[][] arr)
         {
-            throw new NotImplementedException();
+            int? x = null;
+            for (int i = 0; i < arr.Length; i++)
+            { 
+                
+                
+                
+                if (arr[i].Length == 0) { }
+                else
+                {
+                    for (int j = 0; j < arr[i].Length; j++)
+                    {
+                        if(x == null)
+                        {
+                            x = arr[i][j];
+                        }
+                        if (arr[i][j] > x)
+                        {
+                            x = arr[i][j];
+
+                        }
+                    }
+                }
+                
+            }
+         
+           
+            return x;
         }
     }
 }
